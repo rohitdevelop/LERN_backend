@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+</head>
+<body>
+  <h1>Simple Quiz</h1>
+  <form action="/submit" method="POST">
+    <% questions.forEach((q, index) => { %>
+      <div>
+        <p><%= q.question %></p>
+        <% q.options.forEach(opt => { %>
+          <label>
+            <input type="radio" name="q<%= index %>" value="<%= opt %>" required />
+            <%= opt %>
+          </label><br>
+        <% }) %>
+      </div>
+    <% }) %>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
