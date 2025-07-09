@@ -9,11 +9,14 @@ const { getreactQuiz, postreactQuiz } = require('../Cantroller/reactquize');
 const { getnodeQuiz, postnodeQuiz } = require('../Cantroller/nodequize');
 const { getexpressQuiz, postexpressQuiz } = require('../Cantroller/expressquize');
 const { getmongoQuiz, postmongoQuiz } = require('../Cantroller/mongoquize');
+const { signup, login } = require('../Cantroller/authCantroler');
+
+router.post('/signup', signup);
+router.post('/login', login);
 
 // Web Fundamentals Quiz
 router.get('/questions', getwebQuiz);
 router.post('/submit', postwebQuiz);
-
 // HTML Quiz
 router.get('/htmlquestions', gethtmlQuiz);
 router.post('/htmlsubmit', posthtmlQuiz);
