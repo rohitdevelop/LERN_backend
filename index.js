@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;  // Use environment variable if available
 const quizRoute = require('./Router/quizRoute');
 
 // Middleware
-app.use(cors());  // Enable Cross-Origin Resource Sharing
+app.use(cors({ origin: "*", credentials: true })); // Enable Cross-Origin Resource Sharing
 app.use(express.static(path.join(__dirname, 'public')));  // Serve static files from the 'public' folder
 app.use(express.json());  // Parse JSON payloads
 connectDB()
